@@ -1,3 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .calc-height {
+        height: calc(100%-70%);
+    }
+
+    .clip {
+        clip-path: circle(100%);
+    }
+
+    .clip-down {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+    }
+
+    .clip-up {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+
+    .font-size {
+        font-size: 15rem;
+    }
+
+    .flex-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .gray {
+        filter: grayscale(100%);
+    }
+
+    .mid-font-size {
+        font-size: 12rem;
+    }
+
+    .small {
+        font-size: 12px;
+    }
+
+    .transparent {
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .very-small {
+        font-size: 12px;
+    }
+}
