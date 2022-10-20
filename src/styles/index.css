@@ -17,6 +17,10 @@
         clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
     }
 
+    .clip-rec {
+        clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+    }
+
     .clip-up {
         clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
     }
@@ -29,6 +33,15 @@
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    .graph {
+        background-size: 40px 40px;
+        background-image: radial-gradient(
+            circle,
+            #000 1px,
+            rgba(0, 0, 0, 0) 1px
+        );
     }
 
     .gray {

@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 import gsap, { Power2 } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-
 gsap.registerPlugin(ScrollTrigger);
 
 const Info = () => {
@@ -20,7 +19,7 @@ const Info = () => {
                 start: "top top",
                 end: "+=500",
                 pin: clipRef.current,
-                scrub: 4,
+                scrub: 3,
             },
         });
     }, []);

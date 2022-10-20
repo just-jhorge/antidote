@@ -7,7 +7,7 @@ const reveal = {
     to: {
         clipPath: "circle(100%)",
         transition: {
-            duration: 1,
+            duration: 1.7,
             type: "tween",
             when: "beforeChildren",
             staggerChildren: 0.6,

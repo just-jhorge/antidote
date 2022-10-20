@@ -16,102 +16,100 @@ const Preloader = () => {
     useEffect(() => {
         const tl = gsap.timeline();
 
-        setTimeout(() => {
-            tl.to(showImg.current, {
-                y: 0,
-                scale: 1,
-                duration: 1.3,
-                ease: Power4.easeIn,
+        tl.to(showImg.current, {
+            y: 0,
+            scale: 1,
+            duration: 1.3,
+            ease: Power4.easeIn,
+        })
+            .to(
+                box.current,
+                {
+                    clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+                    duration: 1.5,
+                    ease: "power4.out",
+                },
+                "+=1"
+            )
+            .to(boxTwo.current, {
+                clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+                duration: 1.5,
+                ease: "power4.out",
             })
-                .to(
-                    box.current,
-                    {
-                        clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-                        duration: 1.5,
-                        ease: "power4.out",
-                    },
-                    "+=1"
-                )
-                .to(boxTwo.current, {
-                    clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-                    duration: 1.5,
-                    ease: "power4.out",
-                })
-                .to(boxTwo.current, {
-                    clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
-                    duration: 1.5,
-                    ease: "power4.out",
-                })
-                .to(textOne.current, {
-                    scale: 1,
-                    opacity: 1,
-                    duration: 0.7,
+            .to(boxTwo.current, {
+                clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+                duration: 1.5,
+                ease: "power4.out",
+            })
+            .to(textOne.current, {
+                scale: 1,
+                opacity: 1,
+                duration: 0.7,
+                ease: "power2.out",
+            })
+            .to(textOne.current, {
+                scale: 0,
+                opacity: 0,
+                duration: 0.7,
+                ease: "power2.out",
+            })
+            .to(textTwo.current, {
+                scale: 1,
+                opacity: 1,
+                duration: 0.7,
+                ease: "power2.out",
+            })
+            .to(textTwo.current, {
+                scale: 0,
+                opacity: 0,
+                duration: 0.7,
+                ease: "power2.out",
+            })
+            .to(textThree.current, {
+                scale: 1,
+                opacity: 1,
+                duration: 0.7,
+                ease: "power2.out",
+            })
+            .to(textThree.current, {
+                scale: 0,
+                opacity: 0,
+                duration: 0.7,
+                ease: "power2.out",
+            })
+            .to(textFour.current, {
+                scale: 1,
+                opacity: 1,
+                duration: 0.7,
+                ease: "power2.out",
+            })
+            .to(textFour.current, {
+                scale: 0,
+                opacity: 0,
+                duration: 0.7,
+                ease: "power2.out",
+            })
+            .to(textFive.current, {
+                scale: 1,
+                opacity: 1,
+                duration: 2.5,
+                ease: "power2.out",
+            })
+            .to(textFive.current, {
+                scale: 0,
+                opacity: 0,
+                duration: 1.5,
+                ease: "power2.out",
+            })
+            .to(
+                preLoad.current,
+                {
+                    clipPath: "circle(0%)",
+                    duration: 0.4,
                     ease: "power2.out",
-                })
-                .to(textOne.current, {
-                    scale: 0,
-                    opacity: 0,
-                    duration: 0.7,
-                    ease: "power2.out",
-                })
-                .to(textTwo.current, {
-                    scale: 1,
-                    opacity: 1,
-                    duration: 0.7,
-                    ease: "power2.out",
-                })
-                .to(textTwo.current, {
-                    scale: 0,
-                    opacity: 0,
-                    duration: 0.7,
-                    ease: "power2.out",
-                })
-                .to(textThree.current, {
-                    scale: 1,
-                    opacity: 1,
-                    duration: 0.7,
-                    ease: "power2.out",
-                })
-                .to(textThree.current, {
-                    scale: 0,
-                    opacity: 0,
-                    duration: 0.7,
-                    ease: "power2.out",
-                })
-                .to(textFour.current, {
-                    scale: 1,
-                    opacity: 1,
-                    duration: 0.7,
-                    ease: "power2.out",
-                })
-                .to(textFour.current, {
-                    scale: 0,
-                    opacity: 0,
-                    duration: 0.7,
-                    ease: "power2.out",
-                })
-                .to(textFive.current, {
-                    scale: 1,
-                    opacity: 1,
-                    duration: 2.5,
-                    ease: "power2.out",
-                })
-                .to(textFive.current, {
-                    scale: 0,
-                    opacity: 0,
-                    duration: 1.5,
-                    ease: "power2.out",
-                })
-                .to(
-                    preLoad.current,
-                    {
-                        clipPath: "circle(0%)",
-                        duration: 0.4,
-                        ease: "power2.out",
-                    },
-                    "+=.6"
-                );
-        }, 3000);
+                },
+                "+=.6"
+            );
     }, []);
 
     return (
@@ -132,15 +130,6 @@ const Preloader = () => {
                         loading="lazy"
                     />
                 </div>
-                {/* <div className="absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end rounded-lg">
-                    <img
-                        className="h-[50%] w-[70%] translate-y-20 md:h-[40%] md:w-[40%] lg:h-[60%] lg:w-1/4"
-                        src={require("../images/img-23-remove.png")}
-                        alt=""
-                        ref={moveUp}
-                        loading="lazy"
-                    />
-                </div> */}
                 <div className="flex-box absolute top-0 left-0 h-full w-full ">
                     <div
                         className="clip-down h-[60%] w-4/5 md:w-1/2 lg:w-1/4"
